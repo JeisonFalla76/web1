@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYS IMPORTPLAST EIRL - Plásticos Biodegradables</title>
+  <link rel="stylesheet" href="web1.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">GYS IMPORTPLAST</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#detalle">Detalle</a></li>
+        <li><a href="#contacto">Cotización</a></li>
+        <li><a href="#confirmacion">Encuesta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN INICIO -->
+  <section id="inicio" class="seccion">
+    <div class="contenido">
+      <h1>Bienvenido a GYS IMPORTPLAST EIRL</h1>
+      <p>Comprometidos con la sostenibilidad y el futuro del planeta, ofrecemos productos biodegradables de alta calidad para empresas y negocios responsables.</p>
+      <a href="#catalogo" class="boton">Explorar productos</a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CATÁLOGO -->
+  <section id="catalogo" class="seccion">
+    <h2>Catálogo de Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="imagenes/imagen1.jpg" alt="Envase biodegradable">
+        <h3>Envase ecológico para comida</h3>
+        <p>Certificación: <strong>Compostable ASTM D6400</strong></p>
+        <p>Precio: S/ 1.50 c/u</p>
+        <a href="#detalle" class="boton">Ver detalle</a>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/imagen2.jpg" alt="Vaso biodegradable">
+        <h3>Vaso biodegradable 500ml</h3>
+        <p>Certificación: <strong>OK Compost Industrial</strong></p>
+        <p>Precio: S/ 0.80 c/u</p>
+        <a href="#detalle" class="boton">Ver detalle</a>
+      </div>
+
+      <div class="producto">
+        <img src="imagenes/imagen3.jpg" alt="Cubiertos ecológicos">
+        <h3>Set de cubiertos biodegradables</h3>
+        <p>Certificación: <strong>Biobased 70%</strong></p>
+        <p>Precio: S/ 2.20 el set</p>
+        <a href="#detalle" class="boton">Ver detalle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DETALLE -->
+  <section id="detalle" class="seccion">
+    <h2>Detalle del Producto</h2>
+    <div class="detalle-producto">
+      <img src="imagenes/imagen4.jpg" alt="Detalle del producto">
+      <div class="texto-detalle">
+        <h3>Envase ecológico para comida</h3>
+        <p>Fabricado con materiales 100% biodegradables, resistentes al calor y la humedad. Ideal para restaurantes, cafeterías y servicios de delivery.</p>
+        <ul>
+          <li>✅ Material: Pulpa de caña de azúcar</li>
+          <li>✅ Certificación: Compostable ASTM D6400</li>
+          <li>✅ Beneficios: Reduce huella ambiental y cumple con ODS 12</li>
+        </ul>
+        <a href="#contacto" class="boton">Solicitar cotización</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN COTIZACIÓN -->
+  <section id="contacto" class="seccion">
+    <h2>Solicitar Cotización</h2>
+    <form id="formCotizacion" class="formulario">
+      <label for="nombre">Nombre y empresa:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" required>
+
+      <label for="producto">Producto de interés:</label>
+      <input type="text" id="producto" required>
+
+      <label for="mensaje">Mensaje o cantidad requerida:</label>
+      <textarea id="mensaje" rows="4"></textarea>
+
+      <button type="submit" class="boton">Enviar cotización</button>
+    </form>
+
+    <div class="whatsapp">
+      <a href="https://wa.me/51937283938?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización%20sobre%20los%20productos%20biodegradables%20de%20GYS%20IMPORTPLAST%20EIRL." 
+         target="_blank" class="boton-wsp">
+        💬 Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONFIRMACIÓN / ENCUESTA -->
+  <section id="confirmacion" class="seccion">
+    <h2>¡Gracias por tu interés!</h2>
+    <p>Tu opinión nos ayuda a mejorar. Por favor, completa esta breve encuesta.</p>
+    <form id="formEncuesta" class="formulario">
+      <label>¿Cómo calificarías tu experiencia en nuestra web?</label>
+      <select id="satisfaccion">
+        <option value="excelente">Excelente</option>
+        <option value="buena">Buena</option>
+        <option value="regular">Regular</option>
+        <option value="mala">Mala</option>
+      </select>
+
+      <label>¿Qué te gustaría mejorar?</label>
+      <textarea id="comentario" rows="3"></textarea>
+
+      <button type="submit" class="boton">Enviar opinión</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 GYS IMPORTPLAST EIRL | Plataforma sostenible para un futuro verde 🌱</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="web1.js"></script>
+
+  <!-- Script del menú hamburguesa -->
+  <script>
+    const menuBtn = document.createElement('div');
+    menuBtn.classList.add('hamburguesa');
+    menuBtn.innerHTML = '<span></span><span></span><span></span>';
+    document.querySelector('.navbar').appendChild(menuBtn);
+
+    const navLinks = document.querySelector('.nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

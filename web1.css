@@ -1,0 +1,374 @@
+/* ==============================
+   web1.css - Diseño ecológico responsivo (centrado y ajustado)
+   ============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --verde-oscuro: #2e7d32;
+  --verde: #4caf50;
+  --verde-claro: #c8e6c9;
+  --beige: #f8f6f1;
+  --blanco: #fff;
+  --texto: #333;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto);
+  background-color: var(--beige);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+header {
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+/* Enlaces del menú */
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--verde-claro);
+}
+
+/* Botón hamburguesa para móviles */
+.hamburguesa {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburguesa span {
+  width: 25px;
+  height: 3px;
+  background: var(--blanco);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* ==============================
+   SECCIONES GENERALES
+   ============================== */
+.seccion {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: var(--verde-oscuro);
+}
+
+h1 { font-size: 2.6rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; }
+
+/* ==============================
+   BOTONES
+   ============================== */
+.boton {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--blanco);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.boton:hover { background: #388e3c; }
+
+/* ==============================
+   INICIO (centrado y recorte controlado)
+   ============================== */
+#inicio {
+  position: relative;
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+
+  /* Imagen centrada y recortada suavemente */
+  background-image: url("imagenes/imagen5.jpg");
+  background-repeat: no-repeat;
+  background-position: center center; /* 🔹 centrado perfecto */
+  background-size: cover; /* 🔹 recorte equilibrado sin deformar */
+  background-attachment: scroll; /* puedes cambiar a fixed si quieres efecto parallax */
+}
+
+/* Capa verde suave encima de la imagen */
+#inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(46,125,50,0.25); /* 🔹 más transparente */
+  z-index: 0;
+}
+
+/* Contenido sobre la imagen */
+#inicio .contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.35); /* leve fondo oscuro para contraste */
+  padding: 1.8rem;
+  border-radius: 14px;
+  color: #fff;
+  backdrop-filter: blur(2px);
+}
+
+#inicio h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.8rem;
+}
+
+#inicio p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ==============================
+   CATÁLOGO DE PRODUCTOS
+   ============================== */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.producto {
+  background: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.producto:hover { transform: translateY(-5px); }
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+   DETALLE DEL PRODUCTO
+   ============================== */
+.detalle-producto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.detalle-producto img {
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.texto-detalle {
+  max-width: 450px;
+  text-align: left;
+}
+
+.texto-detalle ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.texto-detalle li {
+  margin-bottom: 0.5rem;
+}
+
+/* ==============================
+   FORMULARIOS
+   ============================== */
+.formulario {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.formulario label {
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.formulario button {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* ==============================
+   WHATSAPP
+   ============================== */
+.boton-wsp {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.boton-wsp:hover { background: #1ebe5c; }
+
+/* ==============================
+   FOOTER
+   ============================== */
+footer {
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   BOTÓN FLOTANTE WHATSAPP
+   ============================== */
+.wsp-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.wsp-flotante:hover {
+  background: #1ebe5c;
+  transform: scale(1.1);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 900px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+
+  .detalle-producto {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .texto-detalle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--verde-oscuro);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburguesa {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  #inicio {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .producto img {
+    height: 160px;
+  }
+
+  .formulario {
+    padding: 1.2rem;
+  }
+}
